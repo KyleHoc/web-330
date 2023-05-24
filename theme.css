@@ -1,0 +1,156 @@
+/*Title: theme.css
+//Author: Kyle Hochdoerfer
+//Date: 5/23/23
+//Description: Styling for light/dark themes for WEB 330 assignments
+*/
+
+/*Declare variables for light theme styling*/
+body.light-theme {
+    --text-color: #000;
+    --background-color: #fff;
+    --anchor-color: #4F3674;
+    --h1-background-color: #3c275a;
+    --hl-border-color: #D6A800;
+    --heading-background-color: #3c275a;
+    --heading-color: #fff;
+    --heading-border-color: #D4A800;
+    --anchor-hover-color: #4F3674;
+    --anchor-hover-background-color: #D6A800;
+    --card-background-color: #fff;
+    --card-title-color: #4F3674;
+    --btn-background-color: #4F3674;
+    --btn-color: #fff;
+    --btn-hover-background-color: #D6A800;
+    --btn-hover-color: #4F3674;
+    --input-border-color: #ccc;
+    }
+    
+    /*Declare variables for dark theme styling*/
+    body.dark-theme{
+    --text-color: #fafafa;
+    --background-color: #303030;
+    --anchor-color: #fff;
+    --h1-background-color: #9c27b0;
+    --hl-border-color: #9c27b0;
+    --heading-background-color: #424242;
+    --heading-color: #fff;
+    --heading-border-color: #424242;
+    --anchor-hover-color: #D176e1;
+    --anchor-hover-background-color: #303030;
+    --card-background-color: #424242;
+    --card-title-color: #D176e1;
+    --btn-background-color: #D176e1;
+    --btn-color: #fff;
+    --btn-hover-background-color: #7d4787;
+    --btn-hover-color: #fff;
+    --input-border-color: #303030;
+    }
+
+/*Provide styling to a card and the title and content within it*/
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    background-color: var(--card-background-color);
+}
+
+/*Styling for card titles*/
+.card-title{
+    text-align: center;
+    font-size: 2em;
+    color: var(--card-title-color);
+    font-weight: 400;
+    padding: 5px;
+}
+
+/*Set the padding for card content*/
+.card-content{
+    padding: 2px 16px;
+}
+
+/*Set the box shadow of card content on hover*/
+.card-content:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*Provide button styling*/
+.btn{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+    color: black;
+}
+
+/*Provide primary button styling*/
+.btn-primary{
+    background-color: var(--btn-background-color);
+    color: var(--btn-color);
+}
+
+/*Provide primary button styling on hover*/
+.btn-primary:hover{
+    background-color: var(--btn-hover-background-color);
+    color:var(--btn-hover-color);
+}
+
+/*Provides styling for an input field*/
+.input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid;
+    border-color: var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*Styling for drop down menu*/
+.drop-down-menu{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid;
+    border-color: var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*Body styling*/
+body{
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/*Styling for links*/
+a{
+    color: var(--anchor-color);
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: var(--anchor-hover-background-color);
+    color: var(--anchor-hover-color);
+}
+
+/*Styling for headings*/
+h1{
+    background-color: var(--h1-background-color);
+    color: var(--heading-color);
+    padding: 10px;
+    border: 1px solid;
+    border-color: var(--hl-border-color)
+}
+
+h2, h3, h4{
+    color: var(--heading-color);
+    background-color: var(--heading-background-color);
+    padding: 10px;
+    border: 1px solid;
+    border-color: var(--heading-border-color)
+}

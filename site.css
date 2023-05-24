@@ -1,0 +1,82 @@
+/*Title: site.css
+//Author: Kyle Hochdoerfer
+//Date: 5/23/23
+//Description: Styling for WEB 330 assignments
+*/
+
+/*Styling for container margins*/
+#container{
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/*styling for assignment containers*/
+.assign-container{
+    padding: 10px;
+}
+
+/*Styling for assignment content*/
+.assign-content{
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/*Styling for assignment results*/
+.assign-results-text{
+    text-align: center;
+    font-size: 28px;
+}
+
+/*Set the cursor to appear as a pointer over icons*/
+#icon-mode:hover{
+    cursor: pointer;
+}
+
+/*Styling for icon text*/
+#icon-text{
+    padding-left: 10px;
+}
+
+/*Class for moving content to the right*/
+.pull-right{
+    float: right;
+}
+
+/*Color styling for a return link*/
+.return-home{
+    color: #4F3674;
+}
+
+/*Color styling for return link on hover*/
+.return-home:hover{
+    background-color: #D6A800;
+    color: #4F3674;
+}
+
+/*Color styling for visited return link*/
+.return-home:visited{
+    color: #3C275A
+}
+
+/*Styling for headers*/
+.app-header{
+    font-weight: 400;
+    text-align: center;
+}
+
+/*Set the full width to 100%*/
+.full-width{
+    width: 100%;
+}
+
+/*Provide styling for a form*/
+.form{
+    display: inline-grid;
+    grid-template-columns: auto;
+}
+
+/*Set the padding for a form field*/
+.form-field{
+    padding: 20px;
+}

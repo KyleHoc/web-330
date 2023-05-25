@@ -11,23 +11,6 @@
     margin-right: 100px;
 }
 
-/*styling for assignment containers*/
-.assign-container{
-    padding: 10px;
-}
-
-/*Styling for assignment content*/
-.assign-content{
-    width: 600px;
-    margin: 3% auto 0;
-}
-
-/*Styling for assignment results*/
-.assign-results-text{
-    text-align: center;
-    font-size: 28px;
-}
-
 /*Set the cursor to appear as a pointer over icons*/
 #icon-mode:hover{
     cursor: pointer;
@@ -79,4 +62,21 @@
 /*Set the padding for a form field*/
 .form-field{
     padding: 20px;
+}
+
+/*styling for assignment containers*/
+.assign-container{
+    padding: 10px;
+}
+
+/*Styling for assignment content*/
+.assign-content{
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/*Styling for assignment results*/
+.assign-results-text{
+    text-align: center;
+    font-size: 28px;
 }

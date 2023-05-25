@@ -1,7 +1,8 @@
-//Title: hochdoerfer-bookstore.js
+//Title: theme.js
 //Author: Kyle Hochdoerfer
 //Date: 5/23/23
 //Description: JavaScript for index.html
+//Source code: https://github.com/buwebdev/web-330/blob/master/week-0/theme.js
 
 /**
  * Set the default theme to light if one has not been set in the browsers localStorage

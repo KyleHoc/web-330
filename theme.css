@@ -13,7 +13,7 @@ body.light-theme {
     --hl-border-color: #D6A800;
     --heading-background-color: #3c275a;
     --heading-color: #fff;
-    --heading-border-color: #D4A800;
+    --heading-border-color: #D6A800;
     --anchor-hover-color: #4F3674;
     --anchor-hover-background-color: #D6A800;
     --card-background-color: #fff;
@@ -153,4 +153,10 @@ h2, h3, h4{
     padding: 10px;
     border: 1px solid;
     border-color: var(--heading-border-color)
+}
+
+/*Styling to shift the theme toggle's margins*/
+i{
+    margin-top:15px; 
+    margin-right: 92px;
 }

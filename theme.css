@@ -25,8 +25,8 @@ body.light-theme {
     --input-border-color: #ccc;
     }
     
-    /*Declare variables for dark theme styling*/
-    body.dark-theme{
+/*Declare variables for dark theme styling*/
+body.dark-theme{
     --text-color: #fafafa;
     --background-color: #303030;
     --anchor-color: #fff;
@@ -44,7 +44,7 @@ body.light-theme {
     --btn-hover-background-color: #7d4787;
     --btn-hover-color: #fff;
     --input-border-color: #303030;
-    }
+}
 
 /*Provide styling to a card and the title and content within it*/
 .card{
@@ -153,10 +153,4 @@ h2, h3, h4{
     padding: 10px;
     border: 1px solid;
     border-color: var(--heading-border-color)
-}
-
-/*Styling to shift the theme toggle's margins
-i{
-    margin-top:15px; 
-    margin-right: 92px;
 }

@@ -11,11 +11,6 @@ Description: Styling for hochdoerfer-palindrome.html
     width: 100%;
 }
 
-/*Set app-header font-size to 40px*/
-.app-header{
-    font-size: 40px;
-}
-
 /*Align the assign-results-header to the left*/
 #assign-results-header{
     text-align: left;

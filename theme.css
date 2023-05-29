@@ -155,7 +155,7 @@ h2, h3, h4{
     border-color: var(--heading-border-color)
 }
 
-/*Styling to shift the theme toggle's margins*/
+/*Styling to shift the theme toggle's margins
 i{
     margin-top:15px; 
     margin-right: 92px;

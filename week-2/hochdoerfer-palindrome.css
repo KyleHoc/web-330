@@ -1,0 +1,22 @@
+/*Title: hochdoerfer-palindrome.css
+Author: Kyle Hochdoerfer
+Date: 5/29/23
+Description: Styling for hochdoerfer-palindrome.html
+*/
+
+/*Center a card, it's content, and set the width to 100%*/
+.card{
+    margin:auto;
+    text-align: center;
+    width: 100%;
+}
+
+/*Set app-header font-size to 40px*/
+.app-header{
+    font-size: 40px;
+}
+
+/*Align the assign-results-header to the left*/
+#assign-results-header{
+    text-align: left;
+}

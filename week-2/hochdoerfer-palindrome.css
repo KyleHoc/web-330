@@ -4,6 +4,16 @@ Date: 5/29/23
 Description: Styling for hochdoerfer-palindrome.html
 */
 
+/*Import theme.css for the heading light-dark theme variables*/
+@import url("../theme.css");
+
+/*Set the border, background color, and text color of the main heading*/
+h1{
+    border: none;
+    background-color:var(--background-color);
+    color: var(--text-color);
+}
+
 /*Center a card, it's content, and set the width to 100%*/
 .card{
     margin:auto;

@@ -56,7 +56,7 @@ document.getElementById("btnCheckPhrase").onclick = function() {
     let len = getLength(txtPhrase);
     let reversePhrase = reverse(txtPhrase);
 
-    //Declare a variable to hold an HTML header displaying the date and information about the phrase
+    //Declare a variable to hold an HTML header displaying the date and information about the input phrase
     let header = "Date: " + today + `<br/>`+ "Original Phrase: " + txtPhrase + `<br/>`+ "Reversed Phrase: " 
         + reversePhrase + `<br/>`+ "Phase Length: " + len;
 

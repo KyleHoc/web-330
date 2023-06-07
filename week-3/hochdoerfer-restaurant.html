@@ -1,0 +1,246 @@
+<!--Title: hochdoerfer-restaurant.html
+Author: Kyle Hochdoerfer
+Date: 6/06/23
+Description: App for making restaurant orders
+Note: JavaScript and theme icon code sourced from
+      https://github.com/buwebdev/web-330/blob/master/week-0/theme.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--CSS sheet links, title, metadata, JavaScript, and Google Fonts links-->
+    <link href="../site.css" type="text/css"  rel="stylesheet">
+    <link href="../theme.css" type="text/css"  rel="stylesheet">
+    <link href="hochdoerfer-restaurant.css" type="text/css"  rel="stylesheet">
+    <title>WEB 330 – Enterprise JavaScript II</title>
+    <meta name="description" 
+      content="Assignment 3.2">
+    <meta name="keywords" 
+      content="learning, HTML, CSS">
+    <meta name="author" 
+      content="Kyle Hochdoerfer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="../theme.js"></script>
+  </head>
+  <div class="light-theme">
+    <!--Display light/dark theme toggle-->
+    <i onclick="toggleMode(this)" id="icon-mode" class="fa fa-toggle-off pull-right"
+        style="font-size: 28px;"><span id="icon-text"></span></i>&nbsp;
+    <!--Assignment container to hold the first card, and app-header-->
+    <div class="assign-container">
+      <h1 class="app-header">Welcome to the Restaurant App!</h1>
+      <div class="assign-content">
+        <!--Display a card to hold all menu options, and a title-->
+        <div class="card">
+          <div class="card-title">Restaurant Menu</div>
+          <div class="card-content grid-container">
+            <!--Display a card containing checkbox inputs for beverage options and their pricing-->
+            <div class="card">
+              <div class="card-title">Beverages</div>
+              <div class="card-content" id="beverages">
+                <label for="bev1">
+                  <input type='checkbox' id="bev1" name="soda" value="3.30">Soda ($3.30)
+                </label><br />
+                <label for="bev2">
+                  <input type='checkbox' id="bev2" name="tea" value="3.30">Sweet Tea ($3.30)
+                </label><br />
+                <label for="bev3">
+                  <input type='checkbox' id="bev3" name="coffee" value="2.49">Iced Coffee ($2.49)
+                </label><br />
+                <label for="bev4">
+                  <input type='checkbox' id="bev4" name="water" value="2.15">Bottled Water ($2.15)
+                </label>
+              </div>
+            </div>
+            <!--Display a card containing checkbox inputs for appetizer options and their pricing-->
+            <div class="card">
+              <div class="card-title">Appetizers</div>
+              <div class="card-content" id="appetizers">
+                <label for="app1">
+                  <input type='checkbox' id="app1" name="nachos" value="6.60">Nachos ($6.60)
+                </label><br />
+                <label for="app2">
+                  <input type='checkbox' id="app2" name="chips" value="5.50">Chips and Salsa ($5.50)
+                </label><br />
+                <label for="app3">
+                  <input type='checkbox' id="app3" name="pretzel" value="8.80">Pretzel with Cheese ($8.80)
+                </label><br />
+                <label for="app4">
+                  <input type='checkbox' id="app4" name="pickles" value="8.25">Fried Pickles ($8.25)
+                </label><br />
+              </div>
+            </div>
+            <!--Display a card containing checkbox inputs for main course options and their pricing-->
+            <div class="card mc-card">
+              <div class="card-title">Main Courses</div>
+              <div class="card-content" id="main-courses">
+                <label for="mc1">
+                  <input type='checkbox' id="mc1" name="tacos" value="9.70">Street Tacos ($9.70)
+                </label><br />
+                  <label for="mc2">
+                  <input type='checkbox' id="mc2" name="wings" value="12.80">Boneless Wings ($12.80)
+                </label><br />
+                <label for="mc3">
+                  <input type='checkbox' id="mc3" name="burger" value="12.65">Cheese Burger with Fries ($12.65)
+                </label><br />
+                <label for="mc4">
+                  <input type='checkbox' id="mc4" name="wrap" value="9.65">Chicken Wrap with Salad ($9.65)
+                </label>
+              </div>
+            </div>
+            <!--Display a card containing checkbox inputs for dessert options and their pricing-->
+            <div class="card">
+              <div class="card-title">Desserts</div>
+              <div class="card-content" id="desserts">
+                <label for="des1">
+                  <input type='checkbox' id="des1" name="icecream" value="4.30">Ice Cream ($4.30)
+                </label><br />
+                <label for="des2">
+                  <input type='checkbox' id="des2" name="cake" value="5.40">Chocolate Cake ($5.40)
+                </label><br />
+                <label for="des3">
+                  <input type='checkbox' id="des3" name="pie" value="3.80">Apple Pie ($3.80)
+                </label><br />
+                <!--Display a button to submit your order-->
+                <button class="btn btn-primary" id="btnOrder">Place Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Display a link to return to index.html-->
+      <a href="../index.html">Return</a>
+      </div>
+    </div>
+
+    <!--Assignment container for the results card-->
+    <div class="assign-container">
+      <div class="assign-content">
+        <!--Display a card with a results header-->
+        <div class="card">
+          <div class="card-title ">Order Summary</div>
+            <div class="card-content">
+              <!--Display the total that the order comes to-->
+              <div id="assign-results-header"></div>
+              <div class="assign-results-text" id="order-total"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!--JavaScript module for calculating the order cost-->
+        <script type="module">
+            //Import modules from index.js
+            import { Bill, Beverage, Appetizer, MainCourse, Dessert} from "./index.js";
+
+            //Declare an onclick function mapped to the HTML button
+            document.getElementById("btnOrder").onclick = function() {
+                //Declare variables to hold values from the beverage checkboxes
+                const beveragesEl = document.getElementById('beverages');
+                const beverages = beveragesEl.getElementsByTagName('input');
+
+                //Declare variables to hold values from the appetizer checkboxes
+                const appetizersEl = document.getElementById('appetizers');
+                const appetizers = appetizersEl.getElementsByTagName('input');
+
+                //Declare variables to hold values from the main course checkboxes
+                const mainCoursesEl = document.getElementById('main-courses');
+                const mainCourses = mainCoursesEl.getElementsByTagName('input');
+
+                //Declare variables to hold values from the dessert checkboxes
+                const dessertsEl = document.getElementById('desserts');
+                const desserts = dessertsEl.getElementsByTagName('input');
+
+                //Declare a bill variable to hold all selected items
+                let bill = new Bill(beverages, appetizers, mainCourses, desserts);
+
+                //For all beverages, add the selected options to the bill
+                for (let beverage of beverages){
+                    if (beverage.checked){
+                        bill.addBeverage(new Beverage(beverage.name, beverage.value));
+                    }
+                }
+
+                //For all appetizers, add the selected options to the bill
+                for (let appetizer of appetizers){
+                    if (appetizer.checked){
+                        bill.addAppetizer(new Appetizer(appetizer.name, appetizer.value));
+                    }
+                }
+
+                //For all main courses, add the selected options to the bill
+                for (let mainCourse of mainCourses){
+                    if (mainCourse.checked){
+                        bill.addMainCourse(new MainCourse(mainCourse.name, mainCourse.value));
+                    }
+                }
+
+                //For all desserts, add the selected options to the bill
+                for (let dessert of desserts){
+                    if (dessert.checked){
+                        bill.addDessert(new Dessert(dessert.name, dessert.value));
+                    }
+                }
+
+                //Declare a total variable, holding the calculated order total
+                let total = bill.getTotal();
+
+                //Display the calculated total on the HTML page
+                document.getElementById("order-total").innerHTML = "Your order total is: " + total;
+            }
+        </script>
+      </div>
+    </div>  
+
+    <!--Script for light/dark theme use-->
+    <script>
+      /**
+       * Set the default theme to light if one has not been set in the browsers localStorage
+       */
+      setDefaultTheme();
+
+      /**
+       * Function to switch the users selected website theme
+       * @param x (this instance)
+       */
+      function toggleMode(x)
+      {
+          let colorTheme = document.body.classList; // get the body's CSS class
+          let iconMode = x.classList; // get the current classes assigned to the triggered button
+
+          /**
+           * If the current body class is set to the light-theme, update the user's preference to the dark-theme in the browsers
+           * local storage.
+           */
+          if (colorTheme.value === "light-theme")
+          {
+              localStorage.clear();
+              localStorage.setItem("mode", "dark-theme");
+              localStorage.setItem("iconMode", "fa-toggle-on");
+              localStorage.setItem("iconText", "Dark Mode");
+          }
+          /**
+           * If the current body class is set to the dark-theme, update the user's preference to the light-theme in the browsers
+           * local storage.
+           */
+          else
+          {
+              localStorage.clear();
+              localStorage.setItem("mode", "light-theme");
+              localStorage.setItem("iconMode", "fa-toggle-off");
+              localStorage.setItem("iconText", "Light Mode");
+          }
+
+          /**
+           * Apply the updated selection to the HTML page elements
+           */
+          colorTheme.value = localStorage.getItem("mode");
+          iconMode.value = `fa ${localStorage.getItem("iconMode")} pull-right`;
+          document.getElementById("icon-text").innerHTML = localStorage.getItem("iconText");
+      }
+    </script>
+  </body>
+</html>

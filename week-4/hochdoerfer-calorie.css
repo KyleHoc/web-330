@@ -1,0 +1,35 @@
+/*Title: hochdoerfer-calorie.css
+Author: Kyle Hochdoerfer
+Date: 6/12/23
+Description: Styling for hochdoerfer-calorie.html
+*/
+
+/*Import theme.css for the heading light-dark theme variables*/
+@import url("../theme.css");
+
+/*Set the border, background color, and text color of the main heading*/
+h1{
+    border: none;
+    background-color:var(--background-color);
+    color: var(--text-color);
+}
+
+/*Center a card, it's content, and set the width to 100%*/
+.card{
+    margin:auto;
+    text-align: center;
+    width: 100%;
+}
+
+/*Set button width to 100%*/
+button{
+    width: 100%;
+}
+
+/*Styling for foodList*/
+#foodList{
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
